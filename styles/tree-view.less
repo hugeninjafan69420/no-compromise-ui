@@ -12,9 +12,32 @@
 
 .tree-view {
   color: @text-color;
+  font-size: 13px;
   background-color: @tree-view-background-color;
 
-  .list-item.selected {
-    color: @text-color-selected;
+  .list-item {
+    padding: 2px;
+
+    &.header.project-root-header {
+      font-size: 14px;
+      padding: 10px 0;
+    }
+    &.selected {
+      color: @text-color-selected;
+    }
+  }
+
+  &.list-tree {
+    .selected {
+      &:before {
+        height: 27px;
+      }
+
+      &.project-root {
+        &:before {
+          height: 45px;
+        }
+      }
+    }
   }
 }
